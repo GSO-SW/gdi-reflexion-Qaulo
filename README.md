@@ -20,6 +20,35 @@ Ergänzen Sie hier die notwendigen Code-Ausschnitte, um zu zeigen, wie man es ma
 - Die folgende Liste kann gerne ergänzt werden :)
 
 ### Bewegung animieren
+Das Hindernis braucht eine .Move Methode damit wir das Hindernis bewegen können.
+```
+public class Hindernis
+{
+    public void Move()
+    {
+        this.Position.X -= Speed;
+    }
+}
+```
+Wenn wir unsere Objekte auf den Frame Painten starten wir den GameTick
+```
+private void FrmFrogger_Paint(object sender, PaintEventArgs e)
+{
+    tmrGameTick.Start();
+}
+```
+In der Methode tmrGameTick_Tick wird für jedes Hindernis die .Move Methode aufgerufen um die Hindernisse zu bewegen.
+```
+private void tmrGameTick_Tick(object sender, EventArgs e)
+{
+    foreach (Hindernis aktuellesHindernis in Hindernis.alleHindernisse)
+    {
+        aktuellesHindernis.Move();
+    }
+
+}
+```
+### Objekte mit Tasten steuern
 ```
 private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
 {
@@ -30,7 +59,6 @@ private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
 }
 ```
 
-### Objekte mit Tasten steuern
 
 ### Verhindern, dass ein Spieler aus dem Bild läuft
 
