@@ -57,10 +57,18 @@ private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
     }
 }
 ```
-
-
 ### Verhindern, dass ein Spieler aus dem Bild läuft
+Nachdem wir geprüft haben ob der Key gedrückt wird prüfen wir ob die Y Koordinate kleiner als die ClientSize.Height - heoheJeBereich
+```C#
+if(e.KeyCode == Keys.Down )
+{
+    if (spieler.Y < this.ClientSize.Height - hoeheJeBereich)
+    {
+        spieler.Y = spieler.Y + hoeheJeBereich;
+    }
+}
 
+```
 ### Spiel pausieren
 
 ### Ihr schönstes Ergebnis
