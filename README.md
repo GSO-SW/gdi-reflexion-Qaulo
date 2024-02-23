@@ -20,6 +20,15 @@ Ergänzen Sie hier die notwendigen Code-Ausschnitte, um zu zeigen, wie man es ma
 - Die folgende Liste kann gerne ergänzt werden :)
 
 ### Bewegung animieren
+```
+private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
+{
+    if (e.KeyCode == Keys.Up )
+    {
+        spieler.Y = spieler.Y - hoeheJeBereich;
+    }
+}
+```
 
 ### Objekte mit Tasten steuern
 
