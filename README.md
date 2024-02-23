@@ -21,7 +21,7 @@ Ergänzen Sie hier die notwendigen Code-Ausschnitte, um zu zeigen, wie man es ma
 
 ### Bewegung animieren
 Das Hindernis braucht eine .Move Methode damit wir das Hindernis bewegen können.
-```
+```C#
 public class Hindernis
 {
     public void Move()
@@ -31,25 +31,24 @@ public class Hindernis
 }
 ```
 Wenn wir unsere Objekte auf den Frame Painten starten wir den GameTick
-```
+```C#
 private void FrmFrogger_Paint(object sender, PaintEventArgs e)
 {
     tmrGameTick.Start();
 }
 ```
 In der Methode tmrGameTick_Tick wird für jedes Hindernis die .Move Methode aufgerufen um die Hindernisse zu bewegen.
-```
+```C#
 private void tmrGameTick_Tick(object sender, EventArgs e)
 {
     foreach (Hindernis aktuellesHindernis in Hindernis.alleHindernisse)
     {
         aktuellesHindernis.Move();
     }
-
 }
 ```
 ### Objekte mit Tasten steuern
-```
+```C#
 private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
 {
     if (e.KeyCode == Keys.Up )
